@@ -30,6 +30,7 @@ function draw() {
   }
   }
   
+  
   //health bar
   push()
   if (dead == 1) {
@@ -45,6 +46,9 @@ function draw() {
   fill(240,0,0);
   rect(5,5,290,30);
   pop()
+  if (z <= 0) {
+    die()
+  }
   fill(0);
   textSize(20);
   text(z,8,27);
