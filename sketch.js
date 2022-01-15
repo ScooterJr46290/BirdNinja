@@ -27,7 +27,6 @@ function draw() {
     y -= 7;
   }
   if (y >= windowHeight-25) {
-    
   } else {
   if (!keyIsDown(32)) {
     y += 4;
@@ -43,7 +42,7 @@ function draw() {
   fill(240);
   rect(0,0,300,40);
   fill(240,0,0);
-  rect(5,5,z,30);
+  rect(5,5,z*5,30);
   pop()
   if (z <= 0) {
     die()
