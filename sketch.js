@@ -1,7 +1,7 @@
 let dead = 0;
 
 function preload() {
-  img = loadImage('hehe.jpg');
+  img = loadImage('hehehe.jpg');
 }
 
 function setup() {
