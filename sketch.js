@@ -1,5 +1,9 @@
 let dead = 0;
 
+function preload() {
+  img = loadImage('hehe.jpg');
+}
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   x = windowWidth/2;
