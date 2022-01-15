@@ -9,7 +9,11 @@ function setup() {
 
 function draw() {
   background(100);
-    
+  //dumb ways to die
+  if (y >= windowHeight-25) {
+    z = 0;
+  } 
+  
   //controls the player left/right
   if (keyIsDown(65)) {
     x -= 6;
@@ -38,12 +42,8 @@ function draw() {
   }
   fill(240);
   rect(0,0,300,40);
-  if (y >= windowHeight-25) {
-    z = 0;
-    scale(0, 1);
-  }
   fill(240,0,0);
-  rect(5,5,290,30);
+  rect(5,5,z,30);
   pop()
   if (z <= 0) {
     die()
