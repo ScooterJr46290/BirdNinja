@@ -39,8 +39,7 @@ function draw() {
   fill(240);
   rect(0,0,300,40);
   if (y >= windowHeight-25) {
-    die();
-    z = z-10;
+    z = 0;
     scale(0, 1);
   }
   fill(240,0,0);
