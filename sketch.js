@@ -1,23 +1,41 @@
 let dead = 0;
 
 function preload() {
-  img = loadImage('hehehe.jpg');
+  img = loadImage('BirdNinja/hehehe.png');
 }
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  image(img, 0, 0);
   x = windowWidth/2;
   y = 25;
-  z = '100';
+  z = 100;
+  ppx = random(0,windowWidth);
+  ppy = random(0,windowHeight);
+  pvx = random(-6,7);
+  pvy = random(-6,7);
   }
 
 function draw() {
   background(100);
+  
   //dumb ways to die
+  if (z <= 0) {
+    die()
+  }
   if (y >= windowHeight-25) {
     z = 0;
   } 
+  
+  dtp = dist(ppx,ppy,x,y);
+  if (dtp <= 40) {
+    z = 0;
+  }
+  
+  //Trey
+  ppx=ppx+pvx;
+  ppy=ppy+pvy;
+  /*t = */image(ppx,ppy,25);
+  
   
   //controls the player left/right
   if (keyIsDown(65)) {
@@ -45,13 +63,10 @@ function draw() {
     clear();
   }
   fill(240);
-  rect(0,0,300,40);
+  rect(0,0,310,40);
   fill(240,0,0);
-  rect(5,5,z*5,30);
+  rect(5,5,z*3,30);
   pop()
-  if (z <= 0) {
-    die()
-  }
   fill(0);
   textSize(20);
   text(z,8,27);
