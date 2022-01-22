@@ -20,7 +20,7 @@ function draw() {
   
   //dumb ways to die
   if (z <= 0) {
-    die()
+    die();
   }
   if (y >= windowHeight-25) {
     z = 0;
@@ -58,7 +58,7 @@ function draw() {
   
   
   //health bar
-  push()
+  push();
   if (dead == 1) {
     clear();
   }
