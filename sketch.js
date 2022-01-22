@@ -1,7 +1,7 @@
 let dead = 0;
 
 function preload() {
-  img = loadImage('BirdNinja/hehehe.png');
+  img = loadImage('hehehe.png');
 }
 
 function setup() {
@@ -34,7 +34,7 @@ function draw() {
   //Trey
   ppx=ppx+pvx;
   ppy=ppy+pvy;
-  /*t = */image(ppx,ppy,25);
+  /*t = */image(img,ppx,ppy);
   
   
   //controls the player left/right
