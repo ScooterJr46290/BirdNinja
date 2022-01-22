@@ -149,6 +149,8 @@ function draw() {
   function deletetrey() {
     projectdead = 1;
     tc=0;
+    tcgl=0;
+    tcbl=0;
   }
   
   function createtrey() {
