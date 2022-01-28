@@ -2,7 +2,7 @@ var ppx;
 var ppy;
 var pvx;
 var pvy;
-
+let fps = 60;
 
 function preload() {
   img2 = loadImage('hehehe.png');
@@ -11,6 +11,7 @@ function preload() {
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  frameRate(fps);
   x = windowWidth/2;
   y = 25;
   z = 100;
@@ -19,10 +20,35 @@ function setup() {
   tc = 0;
   tcgl = 0;
   tcbl = 0;
+  dm = 0;
   }
 
 function draw() {
   background(100);
+  
+  //directions
+  text('AVOID EDGES AND EVIL TREYS',windowWidth-310,22);
+  text('Collect Normal/Good Treys',windowWidth-245,42);
+  text('Try to stay alive for aslong as possible',windowWidth-345,62);
+  text('A/D = Left/Right',windowWidth-150,82);
+  text('Space = FlapWings',windowWidth-180,102);
+  
+  //developerMode
+  if (key == 'F4') {
+    dm=1;
+  }
+  if (dm == 1) {
+    text('DevMode:On',2,windowHeight-160);
+    text(dtp,2,windowHeight-140);
+    text(x,2,windowHeight-120);
+    text(y,2,windowHeight-100);
+    text(ppx,2,windowHeight-80);
+    text(ppy,2,windowHeight-60);
+    text(pvx,2,windowHeight-40);
+    text(pvy,2,windowHeight-20);
+    text(frameRate(),2,windowHeight);
+    z = 1000;
+  }
   
   //Trey
   if (tc == 0) {
@@ -108,6 +134,10 @@ function draw() {
   }
   fill(240);
   rect(0,0,310,40);
+  if (z*3 >= 300) {
+  fill(30,255,30);
+  rect(310,0,z*3-300,40);
+  }
   fill(240,0,0);
   rect(5,5,z*3,30);
   pop()
@@ -168,4 +198,6 @@ function draw() {
     pvx = random(3,9);
     pvy = random(-4,4);
   }
+  
+  function keyTyped() {}
 }
